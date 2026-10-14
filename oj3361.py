@@ -1,5 +1,5 @@
 '''ขายรถยนต์'''
-def main():
+def car():
     '''ขายรถยนต์'''
     n = int(input())
 
@@ -22,4 +22,4 @@ def main():
             max_v = cur_v
 
     print(unsell_count)
-main()
+car()
