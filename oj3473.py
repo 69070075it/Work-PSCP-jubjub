@@ -7,11 +7,9 @@ def main():
         'L': ['  *  ', ' *   ', '*****', ' *   ', '  *  '],
         'R': ['  *  ', '   * ', '*****', '   * ', '  *  ']
     }
-
     inp = input()
-
     for i in range(5):
-        row_str = [direction[char][i] for char in inp]
-        print(' '.join(row_str))
+        row = [direction[char][i] for char in inp]
+        print(" ".join(row))
 
 main()
