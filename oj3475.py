@@ -2,32 +2,25 @@
 def main():
     '''Muddled Menu'''
     menu = []
-
     while True:
-        line = input().strip()
-
+        line = input()
         if line == "DONE":
             break
         if line == "CLOSED":
             menu.clear()
-            return
+            break
         if line == "SOMETHING'S WRONG":
             menu.clear()
             continue
-        if line.startswith("Can't do:"):
-            dish = line.split("Can't do:", 1)[1].strip()
-            while dish in menu:
-                menu.remove(dish)
-            continue
-
-        if "#" in line:
-            dish, pos = line.rsplit("#", 1)
-            dish = dish.strip()
-            pos = pos.strip()
-
+        if line.startswith("Can't do: "):
+            dish = line.replace("Can't do: ", "").strip()
             if dish in menu:
                 menu.remove(dish)
-
+            continue
+        if " #" in line:
+            dish, pos = line.rsplit(" #", 1)
+            dish = dish.strip()
+            pos = pos.strip()
             if pos == "N":
                 menu.append(dish)
             else:
